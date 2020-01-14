@@ -24,6 +24,13 @@ function showWeatherData(doto, ok) {
     doto.forEach(repo => {
       console.log(repo);
       contenu += ` <p>${repo.fields}</p>  `;
+      var map = new Microsoft.Maps.Map(document.getElementById("myMap"), {});
+      var pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), {
+        text: "A",
+        title: "Title",
+        subTitle: "Subtitle"
+      });
+      map.entities.push(pushpin);
     });
   } else {
     data = ` <div id="data"> <h2> Marche pas </h2>
